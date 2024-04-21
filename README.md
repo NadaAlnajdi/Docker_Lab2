@@ -73,30 +73,17 @@ ping successful and return response
 ```
 
 ---
-## Task 3: Creating a Custom Nginx Docker Image
-### Objective
-Create a custom Docker image using Nginx and a local HTML file.
+## Task 3:Explain the difference between Docker volumes and Bind Mount.
 
-### Steps
-#### 1. Create a Local HTML File
+
+#### 1.Docker Volumes
 ```bash
-touch index.html
-vim index.html
-```
-#### 2. Write Dockerfile and Copy the HTML file to the Docker Image
-```bash
-vi Dockerfile
-inside file :
-FROM nginx:latest
-COPY index.html /usr/share/nginx/html/index.html
-```
-#### 3. Run Container with New Image
-```bash
-docker build -t custom-nginx .
-docker run -d -p 8088:80 custom-nginx
+● It is stored within a directory on the Docker host. ● Managed by Docker and are isolated from the core functionality of the host machine. ● Docker volumes can be named and managed independently of containers ● Can be mounted into multiple containers simultaneously. ● Deleting a container does not delete the volume. ● Docker provides commands (docker volume create, docker volume ls, etc.) to manage volumes.
 
 ```
+#### 2.Docker Bind Mounts
+```bash
+● Bind mounts have limited functionality compared to volumes. ● Bind mounts are linked to a specific directory or file on the Docker host filesystem. ● The file or directory is referenced by its full path on the host machine. ● When you use a bind mount, a file or directory on the host is mounted into the container, and allowing the container to access the host's filesystem. ● It is created on demand if it does not yet exist. ● You can’t use Docker CLI commands to directly manage bind mounts. ● Available since the early days of Docker.
+```
 
-#### 4. Test the Container, open your browser and navigate to http://localhost:8088 to check if everything is okay
-![image](https://github.com/NadaAlnajdi/Docker_Lab1/assets/113345931/edf9e903-2bd0-43c3-8abb-3e49119bff16)
 
