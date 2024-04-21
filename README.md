@@ -82,7 +82,8 @@ ping successful and return response
 ● Managed by Docker and are isolated from the core functionality of the host machine.
 ● Docker volumes can be named and managed independently of containers
 ● Can be mounted into multiple containers simultaneously.
-● Deleting a container does not delete the volume. ● Docker provides commands (docker volume create, docker volume ls, etc.) to manage volumes.
+● Deleting a container does not delete the volume.
+● Docker provides commands (docker volume create, docker volume ls, etc.) to manage volumes.
 
 ```
 #### 2.Docker Bind Mounts
@@ -91,7 +92,8 @@ ping successful and return response
 ● Bind mounts are linked to a specific directory or file on the Docker host filesystem.
 ● The file or directory is referenced by its full path on the host machine.
 ● When you use a bind mount, a file or directory on the host is mounted into the container, and allowing the container to access the host's filesystem.
-● It is created on demand if it does not yet exist. ● You can’t use Docker CLI commands to directly manage bind mounts.
+● It is created on demand if it does not yet exist.
+● You can’t use Docker CLI commands to directly manage bind mounts.
 ● Available since the early days of Docker.
 ```
 
